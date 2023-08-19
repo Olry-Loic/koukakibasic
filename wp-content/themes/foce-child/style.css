@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+/*ajout d'un effet fadeIn sur la page HTML*/
+html {
+  animation: fadeIn 1000ms;
+}
+
+/* fadeIn*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*ajout d'un effet slideDown sur hero header*/
+.banners {
+  animation: slideDown 2000ms, transition-delay 1000ms;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translatey(-150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}
+/*ajout d'un effet slideUp et flotemnent sur le logo */
+.logo {
+  animation: slideUp 2000ms, transition-delay 1000ms, flotement 4000ms infinite 2000ms;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translatey(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}
+@keyframes flotement {
+  0% {
+    /* La position initiale du logo */
+    transform: translateY(-20px);
+  }
+  50% {
+    /* La position la plus haute du flottement sur les axes X et Y */
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+/*ajout d'un effet storyUp sur la section story, studio, colophon */
+.story, #studio, #nomination, #colophon {
+  animation: storyUp 3000ms, transition-delay 1000ms;
+}
+
+@keyframes storyUp {
+  0% {
+    transform: translatey(200px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+/*modification de la taille des images pour applique l'effet de rotation*/
+.story h2::after, .site-footer::before {
+  width: 155px;
+  height: 155px;
+}
+
+.story__article::after {
+  width: 188px;
+  height: 188px;
+}
+
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+/*ajout d'un effet rotate sur les photos de la page HTML*/
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after {
+  animation: rotate 5000ms infinite linear 2000ms;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*mise en forme de la sectionnomination au oscars)*/
+section#nomination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 128.5px;
+  margin-bottom: 50px;
+}
+
+.nominationOscars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 280px;
+}
+
+.fond-texte {
+  width: 77%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.fond {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: auto;
+  z-index: 1;
+  content: url("./assets/images/fond.png");
+}
+
+.texte {
+  color: white;
+  font-size: 30px;
+  margin-top: 5%;
+  position: absolute;
+  z-index: 2;
+}
+
+.logo-oscars {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  width: 278px;
+  height: 129px;
+}
+
+#nomination .nominationOscars::before {
+  content: "";
+  background-image: url("./assets/images/Sunflower.png");
+  background-size: 100% auto;
+  position: absolute;
+  width: 216px;
+  height: 216px;
+  top: -10em;
+  left: 0em;
+  animation: rotate 5s infinite linear 2000ms;
+}
+
+#nomination .nominationOscars::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  width: 173px;
+  height: 173px;
+  top: -13em;
+  right: -5em;
+  animation: rotate 5s infinite linear 2000ms;
+}
+
+.site-footer::before {
+  display: none;
+}
+
+.site-footer::after {
+  display: none;
+}
+
+/*mise en forme de la section banner*/
+.banners {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.parallax {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.logo img {
+  width: 40%;
+  margin-left: 25%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+
+video#background-video {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+/*mise en forme de l'aparaition des titres*/
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  animation-name: titleAnimation;
+  animation-duration: 2000ms;
+  display: block;
+}
+
+@keyframes titleAnimation {
+  from {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*mise en forme du mode responsive*/
+@media (max-width: 1200px) {
+  .logo-oscars {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #background-video {
+    display: none;
+  }
+  .fond-texte {
+    /*width: auto;*/
+  }
+  .fond {
+    width: 100%;
+  }
+  .texte {
+    font-size: 2.8vw;
+  }
+  h2, h3 {
+    font-size: 5vw;
+    width: 100vw;
+  }
+  .visible {
+    animation: none;
+  }
+  .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, #nomination .nominationOscars::after, #nomination .nominationOscars::before {
+    animation: none;
+  }
+  .logo {
+    animation: none;
+  }
+}/*# sourceMappingURL=style.css.map */
