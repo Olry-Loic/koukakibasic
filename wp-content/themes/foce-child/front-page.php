@@ -31,14 +31,7 @@ get_header();
             <article id="characters">
                 <div class="main-character">
                     <h3 id="personnages"><span class="invisible">Les personnages</span></h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
+                    <?php get_template_part('parts/swiperCoverFlow'); ?>
                 </div>
                 <div class="other-characters">
                     <?php
@@ -55,12 +48,20 @@ get_header();
                 </div>
             </article>
             <article id="place">
+            <img src="<?php echo get_theme_file_uri() . '/assets/images/Studio_Koukaki-image_place.png'; ?> " class="place-image" alt="">
                 <div>
                     <h3 id="Lieu"><span class="invisible">Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
-
             </article>
+            <div class="cloud cloud-parallax">
+                <div class="bigCloud">
+                    <img src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?> " alt="">
+                </div>
+                <div class="littleCloud">
+                    <img src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?> " alt="">
+                </div>
+            </div>
         </section>
 
 

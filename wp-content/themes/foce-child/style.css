@@ -130,12 +130,12 @@ section#nomination {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-  height: 280px;
+  width: 965px;
+  height: 200px;
 }
 
 .fond-texte {
-  width: 77%;
+  width: 674px;
   height: auto;
   position: relative;
   display: flex;
@@ -146,6 +146,7 @@ section#nomination {
   display: flex;
   flex-direction: row;
   position: absolute;
+  width: 120%;
   height: auto;
   z-index: 1;
   content: url("./assets/images/fond.png");
@@ -153,10 +154,14 @@ section#nomination {
 
 .texte {
   color: white;
-  font-size: 30px;
-  margin-top: 5%;
+  font-family: Quicksand;
+  font-size: 42px;
   position: absolute;
   z-index: 2;
+}
+
+#nomination img {
+  margin-left: 40px;
 }
 
 .logo-oscars {
@@ -248,12 +253,92 @@ video#background-video {
 
 @keyframes titleAnimation {
   from {
-    transform: translateY(25px);
+    transform: translateY(40px);
   }
   to {
     transform: translateY(0);
   }
 }
+/*mise en forme du carrousel swiper*/
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 310px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.other-characters figure {
+  display: none;
+}
+
+.swiper.mySwiper.swiper-coverflow.swiper-3d.swiper-initialized.swiper-horizontal.swiper-watch-progress {
+  margin-bottom: 10vw;
+}
+
+/* mise en forme section lieu*/
+.story #place {
+  background-image: none;
+  min-height: 0px;
+  align-items: center;
+}
+
+#studio {
+  margin-top: 17rem;
+}
+
+.place-image {
+  display: flex;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  position: absolute;
+  background-size: cover;
+}
+
+/*mise en forme des nuages*/
+.cloud {
+  display: flex;
+  width: 554px;
+  height: 238px;
+  margin-left: 65%;
+  position: absolute;
+  z-index: 2;
+  top: 1280px;
+  flex-direction: column;
+}
+
+.bigCloud {
+  display: flex;
+  width: 22vw;
+  margin-left: 300px;
+  filter: blur(5px);
+}
+
+.littleCloud {
+  display: flex;
+  width: 8vw;
+  filter: blur(5px);
+}
+
+.story #place > div p {
+  z-index: 3;
+}
+
+.story #place h3 {
+  z-index: 3;
+}
+
 /*mise en forme du mode responsive*/
 @media (max-width: 1200px) {
   .logo-oscars {
@@ -264,18 +349,20 @@ video#background-video {
   #background-video {
     display: none;
   }
+  .place-image {
+    display: none;
+  }
   .fond-texte {
-    /*width: auto;*/
+    width: 100%;
   }
   .fond {
-    width: 100%;
+    width: 75%;
   }
   .texte {
     font-size: 2.8vw;
   }
   h2, h3 {
     font-size: 5vw;
-    width: 100vw;
   }
   .visible {
     animation: none;
@@ -285,5 +372,34 @@ video#background-video {
   }
   .logo {
     animation: none;
+  }
+  .story #place > div p {
+    padding-left: 0em;
+  }
+  .story #place > div {
+    align-items: center !important;
+  }
+  p {
+    width: 100%;
+  }
+  #studio {
+    margin-top: 5rem;
+  }
+  #nomination .nominationOscars::after {
+    display: none;
+  }
+  #nomination .nominationOscars::before {
+    width: 103px;
+    height: 103px;
+    margin-left: 20px;
+  }
+  .nominationOscars {
+    height: 100px;
+  }
+  .texte {
+    margin-top: 5%;
+  }
+  .cloud {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

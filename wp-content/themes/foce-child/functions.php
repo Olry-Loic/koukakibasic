@@ -28,4 +28,16 @@ function mon_parallax_scripts() {
     wp_enqueue_script('parallaxAnimation', get_theme_file_uri() . '/js/parallaxAnimation.js', array(),'1.0', true);
 }
 add_action('wp_enqueue_scripts', 'mon_parallax_scripts');
+
+//ajout carrousel swiper//
+function swiper_script() {
+    // Charger le fichier JavaScript swiper.js
+        wp_enqueue_script('swiper_script', get_theme_file_uri() . '/js/swiper.js', array(),'1.0', true);
+    }
+    add_action('wp_enqueue_scripts', 'swiper_script');
     
+function cloud_script() {
+// Charger le fichier JavaScript cloudAnimation.js
+    wp_enqueue_script('cloud_script', get_theme_file_uri() . '/js/cloudAnimation.js', array(),'1.0', true);
+}
+add_action('wp_enqueue_scripts', 'cloud_script');
