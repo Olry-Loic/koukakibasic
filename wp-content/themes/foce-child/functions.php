@@ -41,3 +41,9 @@ function cloud_script() {
     wp_enqueue_script('cloud_script', get_theme_file_uri() . '/js/cloudAnimation.js', array(),'1.0', true);
 }
 add_action('wp_enqueue_scripts', 'cloud_script');
+
+function menuBurger_script() {
+    // Charger le fichier JavaScript menuBurger.js
+        wp_enqueue_script('menuBurger_script', get_theme_file_uri() . '/js/menuBurger.js', array(),'1.0', true);
+    }
+    add_action('wp_enqueue_scripts', 'menuBurger_script');

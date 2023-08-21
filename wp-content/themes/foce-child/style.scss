@@ -8,6 +8,20 @@
  Version: 0.1
  */
 
+/*ajout d'un effet fadeIn sur la page HTML - ligne 26
+/*ajout d'un effet slideDown sur hero header - ligne 39
+/*ajout d'un effet slideUp et flotemnent sur le logo - ligne 53
+/*ajout d'un effet storyUp sur la section story, studio, colophon - ligne 81
+/*modification de la taille des images pour applique l'effet de rotation - ligne 95
+/*ajout d'un effet rotate sur les fleurs de la page HTML - ligne 117
+/*mise en forme de la section nomination au oscars) - ligne 131
+/*mise en forme de la section banner - ligne 212
+/*mise en forme de l'aparaition des titres - ligne 247
+/*mise en forme du carrousel swiper - ligne 267
+/* mise en forme section lieu - ligne 291
+/*mise en forme des nuages - ligne 313
+/*mise en forme du menu burger - ligne 342
+/*mise en forme du mode responsive - ligne 515
 
 /*ajout d'un effet fadeIn sur la page HTML*/
 html {
@@ -37,12 +51,12 @@ html {
   }
 }
 /*ajout d'un effet slideUp et flotemnent sur le logo */
-.logo{
-  animation: slideUp 2000ms,transition-delay 1000ms,flotement 4000ms infinite 2000ms;
+.logo  {
+  animation: slideUp 2000ms forwards, flotement 4000ms infinite forwards 2000ms;;
 }
 @keyframes slideUp {
   0% {
-    transform: translatey(400px);
+    transform: translatey(800px);
     opacity: 0;
   }
   100% {
@@ -53,11 +67,9 @@ html {
 @keyframes flotement {
 
   0%{
-      /* La position initiale du logo */
       transform: translateY(-20px);
   }
 50% {
-      /* La position la plus haute du flottement sur les axes X et Y */
       transform: translateY(+20px);
   }
 100% {
@@ -67,7 +79,6 @@ html {
 }
 
 /*ajout d'un effet storyUp sur la section story, studio, colophon */
-
 .story, #studio, #nomination, #colophon {
   animation: storyUp 3000ms, transition-delay 1000ms;
 }
@@ -103,7 +114,7 @@ html {
   height: 173px;
 }
 
-/*ajout d'un effet rotate sur les photos de la page HTML*/
+/*ajout d'un effet rotate sur les fleurs de la page HTML*/
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after {
   animation: rotate 5000ms infinite linear 2000ms;
 }
@@ -117,7 +128,7 @@ html {
   }
 }
 
-/*mise en forme de la sectionnomination au oscars)*/
+/*mise en forme de la section nomination au oscars)*/
 section#nomination {
   display: flex;
   justify-content: center;
@@ -198,9 +209,7 @@ content: url("./assets/images/orchid.png");
   display: none;
 }
 
-
 /*mise en forme de la section banner*/
-
 .banners {
   position: relative;
 	width: 100%;
@@ -211,9 +220,6 @@ content: url("./assets/images/orchid.png");
 	align-items: center;
   z-index: 0;
 }
-
-
-
 .parallax {
   position: absolute;
   display: flex;
@@ -223,7 +229,7 @@ content: url("./assets/images/orchid.png");
 }
 .logo img {
   width: 40%;
-	margin-left: 25%;
+	margin-left: 33%;
 	margin-top: 10%;
 	display: flex;
 	justify-content: center;
@@ -231,67 +237,61 @@ content: url("./assets/images/orchid.png");
 	position: absolute;
 	top: 0px;
 	z-index: 1;
-
 }
-
 video#background-video {
   position:absolute;
   z-index: 1;
   width: 100%;
 }
 
-  /*mise en forme de l'aparaition des titres*/
-  .invisible {
-    opacity: 0;
-  
-    }
-  .visible {
-    animation-name: titleAnimation;
-    animation-duration: 2000ms ;
-    display: block;
-  
-  }
-  @keyframes titleAnimation {
+/*mise en forme de l'aparaition des titres*/
+.invisible {
+  opacity: 0;
+}
+.visible {
+  animation-name: titleAnimation;
+  animation-duration: 2000ms ;
+  display: block;
+}
+@keyframes titleAnimation {
 
-    from {
-      
-      transform: translateY(40px);
-      }
+  from {
+    transform: translateY(40px);
+  }
     
-      to {
-      
-      transform: translateY(0);
-    
-      }
-    }
+  to {
+    transform: translateY(0);
+  }
+}
 
-    /*mise en forme du carrousel swiper*/
-  .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-    
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 310px;
-  }
-    
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
-  .other-characters figure {
-    display: none;
-  }
-  .swiper.mySwiper.swiper-coverflow.swiper-3d.swiper-initialized.swiper-horizontal.swiper-watch-progress {
-    margin-bottom: 10vw;
-  }
+/*mise en forme du carrousel swiper*/
+.swiper {
+  width: 100%;
+  max-width: 1440px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}    
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 310px;
+}    
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.other-characters figure {
+  display: none;
+}
+.swiper.mySwiper.swiper-coverflow.swiper-3d.swiper-initialized.swiper-horizontal.swiper-watch-progress {
+  margin-bottom: 10vw;
+}
 
 /* mise en forme section lieu*/
-
+.story {
+  margin-top: 80px;
+}
 .story #place {
   background-image: none;
   min-height: 0px;
@@ -321,7 +321,6 @@ video#background-video {
 	top: 1280px;
 	flex-direction: column;
 }
-
 .bigCloud {
 	display: flex;
   width: 22vw;
@@ -333,7 +332,6 @@ video#background-video {
   width: 8vw;
   filter: blur(5px);
 }
-
 .story #place > div p {
   z-index: 3;
 }
@@ -341,71 +339,274 @@ video#background-video {
   z-index: 3;
 }
 
-    /*mise en forme du mode responsive*/
+/*mise en forme du menu burger*/
+.sidenav {
+	height: 870px;
+	width: 1440px;
+	position: fixed;
+	z-index: 2;
+	top: -870px;
+	background-color: #FFF5E9;
+	transition: top 0.5s ease;
+}
+  
+.sidenav ul {
+	list-style-type: none;
+	padding: 0;
+}
+  
+.sidenav.active {
+	top: 80px;
+}
+  
+.burger-icon .bar {
+	display: block;
+	width: 40px;
+	height: 2px;
+	margin: 6px 0;
+	background-color: #333;
+	transition: 0.3s;
+}
 
-    @media (max-width: 1200px) {
-      .logo-oscars {
-        display: none;
-      }
+#toggleBtn.active .bar:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
 
-    }
+#toggleBtn.active .bar:nth-child(2) {
+	opacity: 0;
+}
 
-    @media (max-width: 768px) {
-      #background-video {
-        display: none;
-      }
-      .place-image{
-        display: none;
-      }
-      .fond-texte {
-        width: 100%;
-      }
-      .fond {
-        width: 75%;
-      }
-      .texte {
-        font-size: 2.8vw;
-      }
-      h2, h3 {
-        font-size: 5vw;
-      }
-      .visible {
-        animation: none;
-      }
-      .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, #nomination .nominationOscars::after, #nomination .nominationOscars::before {
-        animation: none;
-      }
-      .logo {
-        animation: none;
-      }
-      .story #place > div p {
-        padding-left: 0em;
-        
-      }
-      .story #place > div {
-        align-items: center!important;
-      }
-      p {
-        width: 100%;
-      }
-      #studio{
-        margin-top: 5rem;
-      }
-      #nomination .nominationOscars::after {
-        display: none;
-      }
-      #nomination .nominationOscars::before{
-        width: 103px;
-        height: 103px;
-        margin-left: 20px;
-      }
-      .nominationOscars {
-        height: 100px;
-      }
-      .texte {
-        margin-top: 5%;
-      }
-      .cloud {
-        display: none;
-      }
-    }
+#toggleBtn.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+	height: 80px;
+	padding-top: 27px;
+	padding-right: 150px;
+}
+
+.slogant {
+	color: #000;
+}
+
+div.menu {
+  width: 100%;
+  max-width: 1440px;
+}
+.menuFixe{
+  position: fixed!Important;
+}
+.menu {
+	display: flex;
+	width: auto;
+	height: 80px;
+	position: relative;
+	justify-content: flex-end;
+	gap:19%;
+	background-color: #FFD5A2;
+  z-index: 5;
+}
+div#mySidenav {
+  z-index: 4;
+}
+
+.littleLogo {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 85px;
+}
+
+.sidenav a {
+	font-size: 64px;
+	color: black;
+	font-family: Roboto Mono;
+	position: relative;
+	transition: 0.3s;
+	display: flex;
+	text-decoration: none;
+	justify-content: center;
+  }
+
+.sidenav a:hover {
+	color: #000000;
+}
+
+span.text:hover{
+	color: #000;
+	text-shadow: 0px 0px 14px #ff5c00;
+}
+
+p.legend {
+	display: flex;
+	justify-content: center;
+	margin-top: 120px;
+}
+
+.menuImg1 {
+	position: absolute;
+	top: 72px;
+	left: 0px;
+
+}
+
+.menuImg2 {
+	position: absolute;
+	top: 89px;
+	left: 1039px;
+	animation: rotate 10000ms infinite linear;
+}
+
+.menuImg3 {
+	position: absolute;
+	top: 196px;
+	left: 267px;
+	rotate: 17.86 deg;
+	animation: flotement 4000ms infinite forwards 2000ms;
+}
+
+.menuImg4 {
+	position: absolute;
+	top: 395px;
+	left: 213px;
+	animation: rotate 10000ms infinite linear;
+}
+
+.menuImg5 {
+	position: absolute;
+	top: 395px;
+	right: 0px;
+}
+
+.menuImg6 {
+	position: absolute;
+	top: 470px;
+	left: 1076px;
+	animation:  flotement2 4000ms infinite forwards 2000ms;
+}
+.menuImg7 {
+	position: absolute;
+	top: 747px;
+	left: 76px;
+	animation: flotement2 4000ms infinite forwards 2000ms;
+}
+
+.menuImg8 {
+	position: absolute;
+	top: 575px;
+	right: 0px;
+}
+
+@keyframes flotement2 {
+
+0%{
+  transform: translatex(-20px);
+}
+50% {
+  transform: translatex(+20px);
+}
+100% {
+  transform: translatex(-20px);
+}
+}
+
+/*mise en forme du mode responsive*/
+@media (max-width: 1439px) {
+  .sidenav {
+      width: auto;
+      right: 0px;
+      left: 0px;
+  }
+  h1 {
+    font-size: calc(1rem + 1.2vw);
+}
+
+}
+
+@media (max-width: 1200px) {
+  .logo-oscars {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #background-video {
+    display: none;
+  }
+  .place-image{
+    display: none;
+  }
+  .fond-texte {
+    width: 100%;
+  }
+  .fond {
+    width: 90%;
+  }
+  .texte {
+    font-size: 3.9vw;
+  }
+  h2, h3 {
+    font-size: 5vw;
+  }
+  .visible {
+    animation: none;
+  }
+  .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, #nomination .nominationOscars::after, #nomination .nominationOscars::before {
+    animation: none;
+  }
+  .logo {
+    animation: none;
+  }
+  .story #place > div p {
+    padding-left: 0em;
+  }
+  .story #place > div {
+    align-items: center!important;
+  }
+  p {
+    width: 100%;
+  }
+  #studio{
+    margin-top: 5rem;
+  }
+  #nomination .nominationOscars::after {
+    display: none;
+  }
+  #nomination .nominationOscars::before{
+    width: 103px;
+    height: 103px;
+    margin-left: 20px;
+  }
+  .nominationOscars {
+    height: 100px;
+  }
+  .texte {
+    margin-top: 5%;
+  }
+  .cloud {
+    display: none;
+  }
+  .sidenav a {
+    font-size: 30px;
+  }
+  .sidenav {
+    height: 600px;
+  }
+  .menuImg8 {
+    display: none;
+  }
+  .menuImg7 {
+    display: none;
+  }
+  .menuImg3 {
+    display: none;
+  }
+  .menuImg4 {
+    display: none;
+  }
+  .button {
+    padding-right: 10px;
+  }
+}

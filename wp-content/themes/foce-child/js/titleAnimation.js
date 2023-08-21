@@ -19,6 +19,5 @@ function handleIntersection(entries) {
     }
   });
 }
-
 // Observer chaque balise <span> avec la classe "invisible"
 invisibleSpans.forEach(span => observer.observe(span));

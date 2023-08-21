@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--<link rel="stylesheet" href="wp-content/themes/foce-child/style.css">-->
-    <!--<script src="wp-content/themes/foce-child/js/parallaxAnimation.js" defer></script>-->
+ 
 
 	<?php wp_head(); ?>
    
@@ -30,21 +29,46 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <ul>
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
-
+	<div id="menu" class="menu">    
+                <h1 class="slogant">Fleurs d'oranger & chats errants</h1>
+                <div id="toggleBtn" class="button">
+                    <span class="burger-icon">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </span>
+                </div>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a id="closeBtn" href="#" class="close"></a>
+                <div class="littleLogo">
+                    <img src="<?php echo get_theme_file_uri() . '/assets/images/littleLogo.png'; ?> " alt="">
+                </div>
+                <ul>
+                    <li><a href="#histoire">
+                        <span class="text">Histoire</span>
+                    </a></li>
+                    <li><a href="#personnages">
+                        <span class="text">Personnages</span>
+                    </a></li>
+                    <li><a href="#Lieu">
+                        <span class="text">Lieu</span>
+                    </a></li>
+                    <li><a href="#Studio Koukaki">
+                        <span class="text">Studio Koukaki</span>
+                    </a></li>
+                </ul>
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuOrchid.png'; ?> " class="menuImg1" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuSunflower.png'; ?> " class="menuImg2" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuCat.png'; ?> " class="menuImg3" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuFlower.png'; ?> " class="menuImg4" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuRandomFlower.png'; ?> " class="menuImg5" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuGroup.png'; ?> " class="menuImg6" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuCat1.png'; ?> " class="menuImg7" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/assets/images/menuHibiscusfooter.png'; ?> " class="menuImg8" alt="">
+                <P class="legend">Studio Koukaki</p>
+            </div>
+            
+        </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
