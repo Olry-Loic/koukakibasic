@@ -47,3 +47,9 @@ function menuBurger_script() {
         wp_enqueue_script('menuBurger_script', get_theme_file_uri() . '/js/menuBurger.js', array(),'1.0', true);
     }
     add_action('wp_enqueue_scripts', 'menuBurger_script');
+
+function speedFlowers_script() {
+    // Charger le fichier JavaScript menuBurger.js
+        wp_enqueue_script('speedFlowers_script', get_theme_file_uri() . '/js/speedFlower.js', array(),'1.0', true);
+    }
+    add_action('wp_enqueue_scripts', 'speedFlowers_script');

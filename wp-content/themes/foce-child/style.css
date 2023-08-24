@@ -15,13 +15,13 @@
 /*modification de la taille des images pour applique l'effet de rotation - ligne 95
 /*ajout d'un effet rotate sur les fleurs de la page HTML - ligne 117
 /*mise en forme de la section nomination au oscars) - ligne 131
-/*mise en forme de la section banner - ligne 212
-/*mise en forme de l'aparaition des titres - ligne 247
-/*mise en forme du carrousel swiper - ligne 267
-/* mise en forme section lieu - ligne 291
-/*mise en forme des nuages - ligne 313
-/*mise en forme du menu burger - ligne 342
-/*mise en forme du mode responsive - ligne 515
+/*mise en forme de la section banner - ligne 210
+/*mise en forme de l'aparaition des titres - ligne 245
+/*mise en forme du carrousel swiper - ligne 265
+/* mise en forme section lieu - ligne 289
+/*mise en forme des nuages - ligne 311
+/*mise en forme du menu burger - ligne 340
+/*mise en forme du mode responsive - ligne 513
 
 /*ajout d'un effet fadeIn sur la page HTML*/
 html {
@@ -118,8 +118,8 @@ html {
 }
 
 /*ajout d'un effet rotate sur les fleurs de la page HTML*/
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after {
-  animation: rotate 5000ms infinite linear 2000ms;
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, #nomination .nominationOscars::before, #nomination .nominationOscars::after {
+  animation: rotate var(--rotate) infinite linear 2000ms;
 }
 
 @keyframes rotate {
@@ -194,7 +194,6 @@ section#nomination {
   height: 216px;
   top: -10em;
   left: 0em;
-  animation: rotate 5s infinite linear 2000ms;
 }
 
 #nomination .nominationOscars::after {
@@ -204,7 +203,6 @@ section#nomination {
   height: 173px;
   top: -13em;
   right: -5em;
-  animation: rotate 5s infinite linear 2000ms;
 }
 
 .site-footer::before {
@@ -591,9 +589,7 @@ p.legend {
     display: none;
   }
   #nomination .nominationOscars::before {
-    width: 103px;
-    height: 103px;
-    margin-left: 20px;
+    display: none;
   }
   .nominationOscars {
     height: 100px;
